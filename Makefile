@@ -2,7 +2,7 @@ install:
 	poetry install
 
 test:
-	poetry run python -m unittest discover
+	poetry run python -m unittest discover tests/
 
 format:
 	poetry run python -m black gen_fsm/*

@@ -1,0 +1,39 @@
+@startuml
+
+'title T1_pass_through
+
+state A
+state B
+state C
+
+[*] --> A : /self.action("Transition 1")
+
+state A : entry/ self.action("Entered State A")
+state A : exit/ self.action("Exited State A")
+
+A --> B : /self.action("Transition 2")
+
+state B : entry/ self.action("Entered State B")
+state B : exit/ self.action("Exited State B")
+
+B --> C : /self.action("Transition 3")
+
+state C : entry/ self.action("Entered State C")
+state C : exit/ self.action("Exited State C")
+
+C --> [*] : /self.action("Transition 4")
+
+@enduml
+
+@startexpected
+Transition 1
+Entered State A
+Exited State A
+Transition 2
+Entered State B
+Exited State B
+Transition 3
+Entered State C
+Exited State C
+Transition 4
+@endexpected
